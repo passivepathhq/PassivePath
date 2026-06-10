@@ -279,6 +279,55 @@ footer{border-top:1px solid var(--line);padding:30px 44px}
 @media(max-width:1100px){.prin-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:900px){.fashion-grid{grid-template-columns:repeat(2,1fr)}.fashion-bottom{grid-template-columns:1fr}}
 @media(max-width:780px){.fashion-grid,.fashion-bottom,.prin-grid{grid-template-columns:1fr}.banner-card{height:220px}.hero-inner{padding:100px 20px 40px}}
+/* ── Universal Mobile Fix ── */
+@media(max-width:780px){
+
+  /* Sections */
+  .wrap{padding-left:16px;padding-right:16px}
+  .sp-sec{padding-top:48px;padding-bottom:48px}
+  .sp-sh{margin-bottom:20px}
+  .sp-title{font-size:clamp(22px,5vw,30px)}
+  .sp-label{font-size:9px}
+
+  /* Hero */
+  .shop-hero{min-height:60vh}
+  .sh-hero-l{padding:48px 20px 40px}
+  .sh-h1{font-size:clamp(36px,9vw,52px)}
+  .sh-sub{font-size:13px}
+  .sh-meta{gap:12px}
+  .sh-bc{font-size:10px}
+
+  /* Product grid — 2 col */
+  .prod-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .prod-img-wrap{height:150px}
+  .prod-name{font-size:13px}
+  .prod-desc{font-size:11px}
+  .prod-btn{font-size:11px;padding:9px 12px}
+
+  /* Cards */
+  .coll-card{width:150px;height:180px}
+  .guide-card{padding:20px 16px}
+  .pick-card{padding:20px 16px}
+
+  /* CTA */
+  .shop-cta{flex-direction:column;padding:36px 20px;gap:20px;text-align:center}
+  .shop-cta-h{font-size:clamp(26px,7vw,38px)}
+  .shop-cta-p{font-size:13px}
+  .shop-cta-right{flex-direction:column;align-items:center}
+
+  /* Buttons */
+  .btn-primary,.btn-secondary{width:100%;justify-content:center;text-align:center}
+
+  /* Section headers */
+  .sh-title{font-size:clamp(22px,5vw,30px)}
+
+}
+
+@media(max-width:480px){
+  .prod-grid{grid-template-columns:1fr}
+  .sp-sec{padding-top:36px;padding-bottom:36px}
+  .shop-cta-h{font-size:clamp(24px,7vw,32px)}
+}
 </style>
 </head>
 <body>
