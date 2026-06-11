@@ -254,7 +254,13 @@ document.querySelectorAll('.hub').forEach(card=>{
     }, 80);
   });
 })();
-
+var ham = document.querySelector('.n-ham');
+var nav = document.querySelector('#nav');
+if(ham && nav){
+  ham.addEventListener('click', function(){
+    nav.classList.toggle('open');
+  });
+}
 </script>
 </body>
 </html>
