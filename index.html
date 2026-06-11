@@ -6,6 +6,14 @@
 <title>PassivePath — Build Your Best Life</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Figtree:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
 <style>
+  var ham = document.querySelector('.n-ham');
+var nav = document.querySelector('#nav');
+if(ham && nav){
+  ham.addEventListener('click', function(){
+    nav.classList.toggle('open');
+  });
+}
+</style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --bg:#080808;--text:#edeae4;--muted:rgba(237,234,228,.44);
