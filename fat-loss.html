@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Travel — PassivePath</title>
+<title>Fat Loss Guide — PassivePath</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Figtree:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -33,12 +33,12 @@ nav.stuck{background:rgba(8,8,8,.9);backdrop-filter:blur(24px);border-color:var(
 .n-ham span{display:block;width:22px;height:1px;background:var(--text)}
 
 /* HERO — left split */
-.hero{position:relative;min-height:52vh;display:grid;grid-template-columns:56% 44%;align-items:center;overflow:hidden}
-.hero-l{position:relative;z-index:2;padding:68px 48px 24px 60px;display:flex;flex-direction:column;justify-content:center}
+.hero{position:relative;min-height:70vh;display:flex;align-items:flex-end;overflow:hidden}.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(8,8,8,.95) 0%,rgba(8,8,8,.5) 50%,rgba(8,8,8,.15) 100%);z-index:1}
+.hero-l{position:relative;z-index:2;padding:0 60px 64px;display:flex;flex-direction:column;justify-content:flex-end;width:100%}
 .hero-l::after{content:'';position:absolute;top:0;right:0;bottom:0;width:1px;background:linear-gradient(180deg,transparent 5%,rgba(237,234,228,.08) 30%,rgba(237,234,228,.08) 70%,transparent 95%)}
-.hero-r{position:relative;height:100%;overflow:hidden}
-.hero-r img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;filter:brightness(.14) saturate(.3) contrast(1.1)}
-.hero-r-veil{position:absolute;inset:0;background:linear-gradient(90deg,var(--bg) 0%,rgba(8,8,8,.4) 26%,transparent 58%),linear-gradient(180deg,rgba(8,8,8,.6) 0%,transparent 18%,transparent 78%,var(--bg) 100%)}
+.hero-r{position:absolute;inset:0;z-index:0}
+.hero-r img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;filter:brightness(.28) saturate(.3) contrast(1.1)}
+.hero-r-veil{display:none}
 
 /* Hero chips */
 .hero-chips{position:absolute;top:50%;right:32px;transform:translateY(-50%);z-index:3;display:flex;flex-direction:column;gap:9px;opacity:0;animation:fadeUp .8s ease .9s forwards}
@@ -63,7 +63,7 @@ h1 em{font-style:italic;color:rgba(237,234,228,.48);font-weight:700}
 
 /* LAYOUT */
 .wrap{max-width:1300px;margin:0 auto;padding:0 44px}
-.sec{padding:80px 0 0}
+.sec{padding:64px 0 0}
 
 /* section header */
 .sh{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
@@ -223,62 +223,14 @@ footer{border-top:1px solid var(--line);padding:30px 44px}
   .p-card:nth-child(4){border-radius:0 0 16px 16px}
 }
 
-/* CENTERED HERO override */
-.hero-center{position:relative;min-height:72vh;display:flex;align-items:center;justify-content:center;overflow:hidden;text-align:center}
-.hero-center .hero-bg{position:absolute;inset:0;z-index:0}
-.hero-center .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 35%;filter:brightness(.12) saturate(.32) contrast(1.15)}
-.hero-center .hero-bg::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 90% 70% at 50% 40%,rgba(8,8,8,.1) 0%,transparent 55%),linear-gradient(180deg,var(--bg) 0%,transparent 12%,transparent 78%,var(--bg) 100%),linear-gradient(90deg,var(--bg) 0%,transparent 8%,transparent 92%,var(--bg) 100%)}
-.hero-inner{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;max-width:780px;width:100%;padding:120px 24px 52px}
-.hero-inner .breadcrumb{display:flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:24px;opacity:0;animation:fadeUp .7s ease .05s forwards;flex-wrap:wrap;justify-content:center}
-.hero-inner .breadcrumb a{color:var(--dim);text-decoration:none;transition:color .2s}
-.hero-inner .breadcrumb a:hover{color:var(--muted)}
-.hero-inner .breadcrumb span{color:rgba(237,234,228,.15)}
-.hero-inner .hero-eyebrow{opacity:0;animation:fadeUp .7s ease .12s forwards}
-.hero-inner h1{font-family:var(--ff);font-size:clamp(52px,8vw,108px);font-weight:800;letter-spacing:-.045em;line-height:.84;color:var(--text);margin-bottom:20px;opacity:0;animation:fadeUp .9s ease .22s forwards}
-.hero-inner h1 em{font-style:italic;font-weight:700;color:rgba(237,234,228,.46)}
-.hero-inner .hero-sub{font-size:15px;font-weight:300;color:var(--muted);line-height:1.72;max-width:520px;opacity:0;animation:fadeUp .9s ease .32s forwards}
-
-/* SEARCH BAR */
-.search-wrap{width:100%;max-width:1300px;margin:0 auto;padding:28px 44px 0;margin-bottom:12px}
-.search-pill{display:flex;align-items:center;gap:12px;background:rgba(237,234,228,.05);border:1px solid rgba(237,234,228,.14);border-radius:999px;padding:14px 20px 14px 22px;transition:background .25s,border-color .3s;backdrop-filter:blur(12px)}
-.search-pill:focus-within{background:rgba(237,234,228,.08);border-color:rgba(237,234,228,.26)}
-.s-icon{color:rgba(237,234,228,.35);flex-shrink:0;display:flex;align-items:center}
-.search-pill input{flex:1;background:transparent;border:none;outline:none;font-family:var(--fb);font-size:14px;font-weight:300;color:var(--text);letter-spacing:.02em;cursor:text}
-.search-pill input::placeholder{color:rgba(237,234,228,.28)}
-.s-kbd{background:rgba(237,234,228,.06);border:1px solid rgba(237,234,228,.1);border-radius:6px;padding:3px 8px;font-size:10px;font-family:var(--fb);color:rgba(237,234,228,.3);letter-spacing:.04em;white-space:nowrap}
-@media(max-width:780px){.search-wrap{padding:20px 20px 0}.s-kbd{display:none}}
-
-/* BANNER CARDS */
-.fashion-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
-.fashion-bottom{display:grid;grid-template-columns:repeat(2,1fr);gap:13px;margin-top:13px}
-.banner-card{position:relative;overflow:hidden;border-radius:20px;height:268px;display:block;text-decoration:none;cursor:none;background:#0e0e0e;box-shadow:0 0 0 1px rgba(255,255,255,.07),0 8px 36px rgba(0,0,0,.55);transition:transform .65s cubic-bezier(.22,1,.36,1),box-shadow .65s}
-.banner-card:hover{transform:translateY(-8px) scale(1.014);box-shadow:0 0 0 1px rgba(255,255,255,.13),0 20px 64px rgba(0,0,0,.75)}
-.banner-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;filter:brightness(.22) saturate(.35) contrast(1.1);transition:transform .8s cubic-bezier(.22,1,.36,1),filter .65s}
-.banner-card:hover img{transform:scale(1.07);filter:brightness(.14) saturate(.28)}
-.banner-ov{position:absolute;inset:0;border-radius:20px;background:linear-gradient(135deg,rgba(8,8,8,.65) 0%,rgba(8,8,8,.1) 55%,transparent 100%),linear-gradient(180deg,rgba(8,8,8,.15) 0%,transparent 35%,rgba(8,8,8,.92) 100%)}
-.banner-card::after{content:'';position:absolute;inset:0;border-radius:20px;box-shadow:inset 0 1px 0 rgba(255,255,255,.1);pointer-events:none;z-index:4}
-.banner-arr{position:absolute;top:18px;right:18px;z-index:5;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:center;transition:background .3s,transform .45s cubic-bezier(.22,1,.36,1)}
-.banner-card:hover .banner-arr{background:rgba(237,234,228,.92);border-color:transparent;transform:rotate(45deg)}
-.banner-card:hover .banner-arr svg{stroke:#080808}
-.banner-body{position:absolute;bottom:0;left:0;right:0;z-index:3;padding:22px 24px 26px}
-.banner-tag{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(237,234,228,.3);margin-bottom:7px;display:flex;align-items:center;gap:7px}
-.banner-tag::before{content:'';display:block;width:12px;height:1px;background:rgba(237,234,228,.2)}
-.banner-title{font-family:var(--ff);font-size:clamp(20px,2.6vw,28px);font-weight:800;letter-spacing:-.03em;line-height:.92;color:var(--text);margin-bottom:7px}
-.banner-desc{font-size:12.5px;font-weight:300;color:rgba(237,234,228,.46);line-height:1.58;transition:color .3s}
-.banner-card:hover .banner-desc{color:rgba(237,234,228,.65)}
-
-/* PRINCIPLES */
-.prin-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:11px}
-.prin-card{background:var(--s1);border:1px solid var(--line);border-radius:14px;padding:22px 20px 24px;transition:background .25s,border-color .25s,transform .3s cubic-bezier(.22,1,.36,1)}
-.prin-card:hover{background:var(--s2);border-color:var(--line2);transform:translateY(-3px)}
-.prin-icon{width:34px;height:34px;border-radius:9px;background:rgba(237,234,228,.06);border:1px solid var(--line2);display:flex;align-items:center;justify-content:center;margin-bottom:13px;transition:background .25s}
-.prin-card:hover .prin-icon{background:rgba(237,234,228,.1)}
-.prin-title{font-family:var(--ff);font-size:15px;font-weight:700;letter-spacing:-.015em;color:var(--text);margin-bottom:6px}
-.prin-desc{font-size:12px;font-weight:300;color:var(--muted);line-height:1.6}
-
-@media(max-width:1100px){.prin-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:900px){.fashion-grid{grid-template-columns:repeat(2,1fr)}.fashion-bottom{grid-template-columns:1fr}}
-@media(max-width:780px){.fashion-grid,.fashion-bottom,.prin-grid{grid-template-columns:1fr}.banner-card{height:220px}.hero-inner{padding:100px 20px 40px}}
+.strat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.strat-card{background:var(--s1);border:1px solid var(--line);border-radius:14px;padding:20px 22px;display:flex;align-items:center;gap:14px;transition:background .25s,border-color .25s,transform .3s cubic-bezier(.22,1,.36,1);cursor:none}
+.strat-card:hover{background:var(--s2);border-color:var(--line2);transform:translateY(-3px)}
+.strat-icon{width:38px;height:38px;border-radius:10px;background:rgba(237,234,228,.06);border:1px solid var(--line2);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .25s}
+.strat-card:hover .strat-icon{background:rgba(237,234,228,.11)}
+.strat-title{font-family:var(--ff);font-size:14px;font-weight:700;letter-spacing:-.015em;color:var(--text);margin-bottom:3px}
+.strat-tag{font-size:10.5px;font-weight:300;color:var(--muted)}
+@media(max-width:780px){.strat-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -292,121 +244,299 @@ footer{border-top:1px solid var(--line);padding:30px 44px}
   <ul class="n-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="money.html">Money</a></li>
-    <li><a href="body.html">Body</a></li>
-    <li><a href="lifestyle.html" class="active">Lifestyle</a></li>
+    <li><a href="body.html" class="active">Body</a></li>
+    <li><a href="lifestyle.html">Lifestyle</a></li>
     <li><a href="mindset.html">Mindset</a></li>
   </ul>
-  <a href="#categories" class="n-cta">Explore</a>
+  <a href="#tools" class="n-cta">Resources</a>
   <button class="n-ham"><span></span><span></span><span></span></button>
 </nav>
 
-<!-- CENTERED HERO -->
-<section class="hero-center">
-  <div class="hero-bg">
-    <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1800&q=80&auto=format&fit=crop&crop=center" alt="Travel"/>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-l">
+    <div class="hero-bc">
+      <a href="index.html">PassivePath</a><span>/</span>
+      <a href="body.html">Body</a><span>/</span>
+      <span style="color:var(--muted)">Fat Loss</span>
+    </div>
+    <div class="hero-eyebrow"><i></i>Complete Guide</div>
+    <h1>Lose Fat.<br/><em>Keep Results.</em></h1>
+    <p class="hero-sub">Learn the proven principles of sustainable fat loss, build better habits, and create results that actually last.</p>
+    <div class="hero-tags">
+      <div class="htag"><div class="htag-dot"></div>Science-backed</div>
+      <div class="htag"><div class="htag-dot"></div>Sustainable approach</div>
+      <div class="htag"><div class="htag-dot"></div>No fad diets</div>
+    </div>
   </div>
-  <div class="hero-inner">
-    <div class="breadcrumb"><a href="index.html">PassivePath</a><span>/</span><a href="lifestyle.html">Lifestyle</a><span>/</span><span style="color:var(--muted)">Travel</span></div>
-    <div class="hero-eyebrow"><i></i>Travel Hub<i></i></div>
-    <h1>Explore<br/><em>More.</em></h1>
-    <p class="hero-sub">Discover destinations, travel styles, and experiences that inspire your next journey and expand your world.</p>
+  <div class="hero-r">
+    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=1400&q=80&auto=format&fit=crop" alt="Fat Loss"/>
+    <div class="hero-r-veil"></div>
+    <div class="hero-chips">
+      <div class="hchip"><div class="hchip-l">Calorie deficit</div><div class="hchip-v">300–500 kcal</div><div class="hchip-s">Daily for steady fat loss</div></div>
+      <div class="hchip"><div class="hchip-l">Sustainable rate</div><div class="hchip-v">0.5–1kg/week</div><div class="hchip-s">Healthy fat loss pace</div></div>
+      <div class="hchip"><div class="hchip-l">Protein target</div><div class="hchip-v">1.6–2.2g/kg</div><div class="hchip-s">Preserves lean muscle mass</div></div>
+    </div>
   </div>
 </section>
 
-<!-- SECTION 1: TRAVEL CATEGORIES — 3 top + 2 bottom -->
-<div class="wrap sec reveal" id="categories">
+<!-- SECTION 1: CORE PRINCIPLES -->
+<div class="wrap sec reveal" id="principles" style="padding-top:64px">
   <div class="sh">
     <div class="sh-left">
-      <div class="sh-label">Discover</div>
-      <div class="sh-title">Travel Categories</div>
+      <div class="sh-label">Core Principles</div>
+      <div class="sh-title">The Science of Fat Loss</div>
     </div>
   </div>
-
-  <div class="fashion-grid">
-    <a class="banner-card" href="lifestyle.html">
-      <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&q=85&auto=format&fit=crop&crop=center" alt="Destinations"/>
-      <div class="banner-ov"></div>
-      <div class="banner-arr"><svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="rgba(237,234,228,.8)" stroke-width="1.5"><path d="M1 10.5L10.5 1M10.5 1H4M10.5 1V7.5"/></svg></div>
-      <div class="banner-body">
-        <div class="banner-tag">Category</div>
-        <div class="banner-title">Destinations</div>
-        <div class="banner-desc">Discover inspiring places around the world waiting to be explored.</div>
-      </div>
-    </a>
-    <a class="banner-card" href="lifestyle.html">
-      <img src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?w=800&q=85&auto=format&fit=crop&crop=center" alt="Adventure Travel"/>
-      <div class="banner-ov"></div>
-      <div class="banner-arr"><svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="rgba(237,234,228,.8)" stroke-width="1.5"><path d="M1 10.5L10.5 1M10.5 1H4M10.5 1V7.5"/></svg></div>
-      <div class="banner-body">
-        <div class="banner-tag">Category</div>
-        <div class="banner-title">Adventure Travel</div>
-        <div class="banner-desc">Explore outdoor experiences and unforgettable adventures off the beaten path.</div>
-      </div>
-    </a>
-    <a class="banner-card" href="lifestyle.html">
-      <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=85&auto=format&fit=crop&crop=center" alt="Luxury Travel"/>
-      <div class="banner-ov"></div>
-      <div class="banner-arr"><svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="rgba(237,234,228,.8)" stroke-width="1.5"><path d="M1 10.5L10.5 1M10.5 1H4M10.5 1V7.5"/></svg></div>
-      <div class="banner-body">
-        <div class="banner-tag">Category</div>
-        <div class="banner-title">Luxury Travel</div>
-        <div class="banner-desc">Experience premium destinations, elevated stays, and refined travel.</div>
-      </div>
-    </a>
-  </div>
-
-  <div class="fashion-bottom">
-    <a class="banner-card" href="lifestyle.html">
-      <img src="https://images.unsplash.com/photo-1488085061387-422e29b40080?w=900&q=85&auto=format&fit=crop&crop=center" alt="Budget Travel"/>
-      <div class="banner-ov"></div>
-      <div class="banner-arr"><svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="rgba(237,234,228,.8)" stroke-width="1.5"><path d="M1 10.5L10.5 1M10.5 1H4M10.5 1V7.5"/></svg></div>
-      <div class="banner-body">
-        <div class="banner-tag">Category</div>
-        <div class="banner-title">Budget Travel</div>
-        <div class="banner-desc">Travel smarter and further while maximising experiences on any budget.</div>
-      </div>
-    </a>
-    <a class="banner-card" href="gear-essentials.html">
-      <img src="https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?w=900&q=85&auto=format&fit=crop&crop=center" alt="Travel Essentials"/>
-      <div class="banner-ov"></div>
-      <div class="banner-arr"><svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="rgba(237,234,228,.8)" stroke-width="1.5"><path d="M1 10.5L10.5 1M10.5 1H4M10.5 1V7.5"/></svg></div>
-      <div class="banner-body">
-        <div class="banner-tag">Resource</div>
-        <div class="banner-title">Travel Essentials</div>
-        <div class="banner-desc">Discover gear, packing systems, planning tools, and travel resources.</div>
-      </div>
-    </a>
+  <div class="principles-grid">
+    <div class="p-card">
+      <div class="p-num">01</div>
+      <div class="p-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="rgba(237,234,228,.6)" stroke-width="1.35"><path d="M8 2v5l3 3-3 3v3M4 6l-2 3 2 3"/></svg></div>
+      <div class="p-title">Calorie Deficit</div>
+      <div class="p-desc">Fat loss has one non-negotiable requirement: burning more calories than you consume. A 300–500 calorie daily deficit produces 0.5–1kg of fat loss per week consistently.</div>
+    </div>
+    <div class="p-card">
+      <div class="p-num">02</div>
+      <div class="p-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="rgba(237,234,228,.6)" stroke-width="1.35"><path d="M2 8l4 4 8-8"/></svg></div>
+      <div class="p-title">Consistency</div>
+      <div class="p-desc">Perfection isn't required — consistency is. Six imperfect days per week every week for six months outperforms any seven-day streak that breaks after month one.</div>
+    </div>
+    <div class="p-card">
+      <div class="p-num">03</div>
+      <div class="p-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="rgba(237,234,228,.6)" stroke-width="1.35"><path d="M3 12l3-4 2.5 2.5 4-5.5"/><path d="M11 3h3v3"/></svg></div>
+      <div class="p-title">Strength Training</div>
+      <div class="p-desc">Resistance training preserves muscle during a deficit, increases your resting metabolism, and creates the lean physique that cardio alone never produces.</div>
+    </div>
+    <div class="p-card">
+      <div class="p-num">04</div>
+      <div class="p-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="rgba(237,234,228,.6)" stroke-width="1.35"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2"/></svg></div>
+      <div class="p-title">Patience</div>
+      <div class="p-desc">Sustainable fat loss takes months, not weeks. The body resists rapid change. People who reach their goals are those who accepted the timeline and kept going anyway.</div>
+    </div>
   </div>
 </div>
 
-<!-- SECTION 2: TRAVEL PRINCIPLES -->
-<div class="wrap sec reveal" id="principles" style="padding-top:88px">
+<!-- SECTION 2: ROADMAP -->
+<div class="wrap sec reveal" id="roadmap" style="padding-top:64px">
   <div class="sh">
     <div class="sh-left">
-      <div class="sh-label">The Mindset</div>
-      <div class="sh-title">Travel Principles</div>
+      <div class="sh-label">The Roadmap</div>
+      <div class="sh-title">5 Steps to Sustainable Fat Loss</div>
     </div>
   </div>
-  <div class="prin-grid">
-    <div class="prin-card">
-      <div class="prin-icon"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" stroke="rgba(237,234,228,.6)" stroke-width="1.3"><rect x="2" y="2" width="11" height="11" rx="2"/><path d="M5 7.5h5M7.5 5v5"/></svg></div>
-      <div class="prin-title">Plan Smart</div>
-      <div class="prin-desc">Good planning creates better experiences. A little preparation transforms a trip from stressful to seamless.</div>
+  <div class="roadmap">
+    <div class="rm-step">
+      <div class="rm-num">1</div>
+      <div class="rm-title">Understand Calories</div>
+      <div class="rm-desc">Calculate your TDEE and set a 300–500 calorie daily deficit. This is the only number that determines fat loss speed.</div>
     </div>
-    <div class="prin-card">
-      <div class="prin-icon"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" stroke="rgba(237,234,228,.6)" stroke-width="1.3"><path d="M7.5 2v11M3.5 5l4-3 4 3"/></svg></div>
-      <div class="prin-title">Travel Light</div>
-      <div class="prin-desc">Carry only what you truly need. A lighter bag means more freedom, less stress, and a better journey every time.</div>
+    <div class="rm-step">
+      <div class="rm-num">2</div>
+      <div class="rm-title">Improve Nutrition</div>
+      <div class="rm-desc">Prioritise protein at every meal, reduce ultra-processed food, and build eating habits you can sustain for months — not days.</div>
     </div>
-    <div class="prin-card">
-      <div class="prin-icon"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" stroke="rgba(237,234,228,.6)" stroke-width="1.3"><circle cx="7.5" cy="7.5" r="5.5"/><circle cx="7.5" cy="7.5" r="2"/></svg></div>
-      <div class="prin-title">Experience More</div>
-      <div class="prin-desc">Focus on experiences rather than possessions. The memories you collect outlast any souvenir.</div>
+    <div class="rm-step">
+      <div class="rm-num">3</div>
+      <div class="rm-title">Increase Activity</div>
+      <div class="rm-desc">Add resistance training 3x per week and increase daily steps to 8,000–10,000. Movement compounds — small daily activity adds up to major results.</div>
     </div>
-    <div class="prin-card">
-      <div class="prin-icon"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" stroke="rgba(237,234,228,.6)" stroke-width="1.3"><path d="M2 7.5c0-3.04 2.46-5.5 5.5-5.5 1.52 0 2.9.62 3.9 1.6M13 7.5c0 3.04-2.46 5.5-5.5 5.5-1.52 0-2.9-.62-3.9-1.6"/><path d="M11 5.5l2-2 2 2M2 9l-2 2 2 2"/></svg></div>
-      <div class="prin-title">Stay Flexible</div>
-      <div class="prin-desc">The best memories are often unexpected. Build space into your plans for spontaneity and discovery.</div>
+    <div class="rm-step">
+      <div class="rm-num">4</div>
+      <div class="rm-title">Build Consistency</div>
+      <div class="rm-desc">Track your food, train on schedule, and protect sleep quality. The habits you build in weeks 1–8 determine everything that follows.</div>
+    </div>
+    <div class="rm-step">
+      <div class="rm-num">5</div>
+      <div class="rm-title">Maintain Results</div>
+      <div class="rm-desc">Gradually increase calories back to maintenance. Keep training. The habits formed during the cut become the lifestyle that keeps results permanent.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 3: FOUNDATIONS -->
+<div class="wrap sec reveal" id="foundations" style="padding-top:64px">
+  <div class="sh">
+    <div class="sh-left">
+      <div class="sh-label">The Pillars</div>
+      <div class="sh-title">Fat Loss Foundations</div>
+    </div>
+  </div>
+  <div class="skills-grid">
+    <div class="sk-card">
+      <div class="sk-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="rgba(237,234,228,.6)" stroke-width="1.35"><path d="M8 2C5.79 2 4 3.79 4 6c0 3 4 8 4 8s4-5 4-8c0-2.21-1.79-4-4-4z"/></svg></div>
+      <div class="sk-body"><div class="sk-title">Nutrition</div><div class="sk-tag">80% of fat loss results</div></div>
+    </div>
+    <div class="sk-card">
+      <div class="sk-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="rgba(237,234,228,.6)" stroke-width="1.35"><path d="M3 12l3-4 2.5 2.5 4-5.5"/></svg></div>
+      <div class="sk-body"><div class="sk-title">Training</div><div class="sk-tag">Preserves muscle · Burns calories</div></div>
+    </div>
+    <div class="sk-card">
+      <div class="sk-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="rgba(237,234,228,.6)" stroke-width="1.35"><path d="M2 8C2 4.69 4.69 2 8 2s6 2.69 6 6"/><path d="M8 6v2l2 2"/></svg></div>
+      <div class="sk-body"><div class="sk-title">Sleep</div><div class="sk-tag">7–9 hrs · Hormones + recovery</div></div>
+    </div>
+    <div class="sk-card">
+      <div class="sk-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="rgba(237,234,228,.6)" stroke-width="1.35"><path d="M8 2v5l3 3-3 3v3"/></svg></div>
+      <div class="sk-body"><div class="sk-title">Recovery</div><div class="sk-tag">Rest days prevent burnout</div></div>
+    </div>
+    <div class="sk-card">
+      <div class="sk-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="rgba(237,234,228,.6)" stroke-width="1.35"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2"/></svg></div>
+      <div class="sk-body"><div class="sk-title">Hydration</div><div class="sk-tag">2–3L daily · Reduces hunger</div></div>
+    </div>
+    <div class="sk-card">
+      <div class="sk-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="rgba(237,234,228,.6)" stroke-width="1.35"><path d="M4 12l4-8 4 8"/><path d="M5.5 9h5"/></svg></div>
+      <div class="sk-body"><div class="sk-title">Daily Movement</div><div class="sk-tag">8–10k steps · NEAT calories</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 4: EFFECTIVE STRATEGIES -->
+<div class="wrap sec reveal" id="strategies" style="padding-top:64px">
+  <div class="sh">
+    <div class="sh-left">
+      <div class="sh-label">What Works</div>
+      <div class="sh-title">Effective Fat Loss Strategies</div>
+    </div>
+  </div>
+  <div class="strat-grid">
+    <div class="strat-card">
+      <div class="strat-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="rgba(237,234,228,.6)" stroke-width="1.35"><rect x="3" y="3" width="10" height="10" rx="1.5"/><path d="M6 8h4M8 6v4"/></svg></div>
+      <div><div class="strat-title">Portion Control</div><div class="strat-tag">Simple · No tracking required</div></div>
+    </div>
+    <div class="strat-card">
+      <div class="strat-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="rgba(237,234,228,.6)" stroke-width="1.35"><path d="M2 8l4 4 8-8"/></svg></div>
+      <div><div class="strat-title">High Protein Diet</div><div class="strat-tag">1.6–2.2g/kg · Preserves muscle</div></div>
+    </div>
+    <div class="strat-card">
+      <div class="strat-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="rgba(237,234,228,.6)" stroke-width="1.35"><path d="M4 12l4-8 4 8"/><path d="M5.5 9h5"/></svg></div>
+      <div><div class="strat-title">Walking More</div><div class="strat-tag">Low effort · High calorie burn</div></div>
+    </div>
+    <div class="strat-card">
+      <div class="strat-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="rgba(237,234,228,.6)" stroke-width="1.35"><path d="M3 12l3-4 2.5 2.5 4-5.5"/></svg></div>
+      <div><div class="strat-title">Resistance Training</div><div class="strat-tag">3x/week · Builds lean physique</div></div>
+    </div>
+    <div class="strat-card">
+      <div class="strat-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="rgba(237,234,228,.6)" stroke-width="1.35"><rect x="2" y="4" width="12" height="9" rx="1.5"/><path d="M5 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1"/></svg></div>
+      <div><div class="strat-title">Meal Planning</div><div class="strat-tag">Removes daily decisions</div></div>
+    </div>
+    <div class="strat-card">
+      <div class="strat-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="rgba(237,234,228,.6)" stroke-width="1.35"><rect x="3" y="2" width="10" height="12" rx="1.5"/><path d="M6 5h4M6 8h4M6 11h2"/></svg></div>
+      <div><div class="strat-title">Tracking Progress</div><div class="strat-tag">Data-driven · Reveals patterns</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 5: TOOLS -->
+<div class="wrap sec reveal" id="tools" style="padding-top:64px">
+  <div class="sh">
+    <div class="sh-left">
+      <div class="sh-label">Recommended Tools</div>
+      <div class="sh-title">Your Fat Loss Toolkit</div>
+    </div>
+  </div>
+  <div class="tools-layout">
+    <a class="tool-featured" href="https://www.myfitnesspal.com" target="_blank" rel="noopener">
+      <div class="tf-badge">Essential</div>
+      <div class="tf-title">MyFitnessPal — Track Everything</div>
+      <div class="tf-desc">The world's most comprehensive calorie and macro tracking app. Log food in seconds with a barcode scanner, track progress over months, and understand exactly what you're eating. Free version covers everything a beginner needs.</div>
+      <div class="tf-link">Download Free <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M1 9L9 1M9 1H3M9 1v6"/></svg></div>
+    </a>
+    <div class="tools-sub">
+      <a class="tool-sm" href="https://www.nike.com/nrc-app" target="_blank" rel="noopener">
+        <div class="tool-sm-icon">NK</div>
+        <div class="tool-sm-body"><div class="tool-sm-title">Nike Training Club</div><div class="tool-sm-desc">Free workout plans for all levels — no equipment required</div></div>
+        <div class="tool-sm-badge">Free</div>
+      </a>
+      <a class="tool-sm" href="https://www.cronometer.com" target="_blank" rel="noopener">
+        <div class="tool-sm-icon">CR</div>
+        <div class="tool-sm-body"><div class="tool-sm-title">Cronometer</div><div class="tool-sm-desc">Precise micronutrient tracking for serious nutrition optimisation</div></div>
+        <div class="tool-sm-badge">Recommended</div>
+      </a>
+      <a class="tool-sm" href="https://www.streaks.app" target="_blank" rel="noopener">
+        <div class="tool-sm-icon">ST</div>
+        <div class="tool-sm-body"><div class="tool-sm-title">Streaks App</div><div class="tool-sm-desc">Track daily habits — training, water, steps, sleep — don't break the chain</div></div>
+        <div class="tool-sm-badge">Popular</div>
+      </a>
+      <a class="tool-sm" href="https://www.fitbit.com" target="_blank" rel="noopener">
+        <div class="tool-sm-icon">FB</div>
+        <div class="tool-sm-body"><div class="tool-sm-title">Fitness Tracker</div><div class="tool-sm-desc">Monitor steps, sleep, and heart rate — passive accountability every day</div></div>
+        <div class="tool-sm-badge">Essential</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 6: MISTAKES -->
+<div class="wrap sec reveal" id="mistakes" style="padding-top:64px">
+  <div class="sh">
+    <div class="sh-left">
+      <div class="sh-label">Avoid These</div>
+      <div class="sh-title">Common Fat Loss Mistakes</div>
+    </div>
+  </div>
+  <div class="mistakes-grid">
+    <div class="mk-card">
+      <div class="mk-x"><svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="rgba(237,234,228,.4)" stroke-width="1.4"><path d="M1.5 1.5l8 8M9.5 1.5l-8 8"/></svg></div>
+      <div><div class="mk-title">Extreme dieting</div><div class="mk-desc">Cutting to 1,000 calories crashes your metabolism, destroys muscle, and guarantees rebound weight gain. A modest 300–500 calorie deficit is always more sustainable and effective.</div></div>
+    </div>
+    <div class="mk-card">
+      <div class="mk-x"><svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="rgba(237,234,228,.4)" stroke-width="1.4"><path d="M1.5 1.5l8 8M9.5 1.5l-8 8"/></svg></div>
+      <div><div class="mk-title">Skipping protein</div><div class="mk-desc">Low protein during a deficit causes your body to burn muscle for energy rather than fat. High protein keeps you full, preserves muscle, and significantly improves body composition results.</div></div>
+    </div>
+    <div class="mk-card">
+      <div class="mk-x"><svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="rgba(237,234,228,.4)" stroke-width="1.4"><path d="M1.5 1.5l8 8M9.5 1.5l-8 8"/></svg></div>
+      <div><div class="mk-title">Inconsistent training</div><div class="mk-desc">Training hard for two weeks then stopping for two creates zero adaptation. Three consistent sessions per week every week for three months is worth more than any intense short burst.</div></div>
+    </div>
+    <div class="mk-card">
+      <div class="mk-x"><svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="rgba(237,234,228,.4)" stroke-width="1.4"><path d="M1.5 1.5l8 8M9.5 1.5l-8 8"/></svg></div>
+      <div><div class="mk-title">Expecting fast results</div><div class="mk-desc">The scale often doesn't move for 2–3 weeks before showing consistent drops. Most people quit just before results become visible. The body changes before the scale does.</div></div>
+    </div>
+    <div class="mk-card">
+      <div class="mk-x"><svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="rgba(237,234,228,.4)" stroke-width="1.4"><path d="M1.5 1.5l8 8M9.5 1.5l-8 8"/></svg></div>
+      <div><div class="mk-title">Ignoring sleep</div><div class="mk-desc">Poor sleep elevates cortisol, increases hunger hormones, and causes muscle loss during a deficit. Seven to nine hours isn't optional — it's the third pillar of fat loss alongside diet and training.</div></div>
+    </div>
+    <div class="mk-card">
+      <div class="mk-x"><svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="rgba(237,234,228,.4)" stroke-width="1.4"><path d="M1.5 1.5l8 8M9.5 1.5l-8 8"/></svg></div>
+      <div><div class="mk-title">Only doing cardio</div><div class="mk-desc">Cardio burns calories but destroys muscle without resistance training. The lean physique everyone wants requires lifting weights. Cardio supplements training — it doesn't replace it.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 7: TIMELINE -->
+<div class="wrap sec reveal" id="timeline" style="padding-top:64px">
+  <div class="sh">
+    <div class="sh-left">
+      <div class="sh-label">What to Expect</div>
+      <div class="sh-title">Your Progress Timeline</div>
+    </div>
+  </div>
+  <div class="timeline-grid">
+    <div class="tl-card">
+      <div class="tl-ghost">30D</div>
+      <div class="tl-marker"><div class="tl-dot g"></div><div class="tl-period">Start</div></div>
+      <div class="tl-time">30 Days</div>
+      <div class="tl-label">Build Habits</div>
+      <div class="tl-desc">Deficit established, training routine started, food tracking active. Scale weight may fluctuate but habits are forming. Energy improving. This is the hardest month — stay consistent.</div>
+    </div>
+    <div class="tl-card">
+      <div class="tl-ghost">90D</div>
+      <div class="tl-marker"><div class="tl-dot b"></div><div class="tl-period">Visible</div></div>
+      <div class="tl-time">90 Days</div>
+      <div class="tl-label">Visible Progress</div>
+      <div class="tl-desc">Noticeable changes in the mirror. Clothes fitting differently. 3–6kg of fat lost for most people. Strength improving. The compound effect of three consistent months is now showing.</div>
+    </div>
+    <div class="tl-card">
+      <div class="tl-ghost">6M</div>
+      <div class="tl-marker"><div class="tl-dot y"></div><div class="tl-period">Transform</div></div>
+      <div class="tl-time">6 Months</div>
+      <div class="tl-label">Major Transformation</div>
+      <div class="tl-desc">Significant body composition change. 8–15kg of fat lost is realistic. Muscle definition visible. The physique you were working toward is now the physique you have.</div>
+    </div>
+    <div class="tl-card">
+      <div class="tl-ghost">1Y</div>
+      <div class="tl-marker"><div class="tl-dot p"></div><div class="tl-period">Lifestyle</div></div>
+      <div class="tl-time">12 Months</div>
+      <div class="tl-label">Lifestyle Change</div>
+      <div class="tl-desc">The habits are automatic. Training feels like identity, not obligation. Nutrition is intuitive. The result is maintained without active effort — because it's no longer a diet. It's just how you live.</div>
     </div>
   </div>
 </div>
@@ -414,15 +544,15 @@ footer{border-top:1px solid var(--line);padding:30px 44px}
 <!-- FINAL CTA -->
 <div class="wrap final-cta reveal">
   <div class="cta-inner">
-    <div class="cta-ghost">TRAVEL</div>
+    <div class="cta-ghost">FAT LOSS</div>
     <div class="cta-left">
-      <div class="cta-label">Start Exploring</div>
-      <div class="cta-h">Start Your<br/>Next Journey.</div>
-      <p class="cta-p">Explore destinations, travel styles, and experiences that inspire your next adventure and expand your world.</p>
+      <div class="cta-label">Start Today</div>
+      <div class="cta-h">Start Your<br/>Transformation.</div>
+      <p class="cta-p">Small daily actions create lasting results. Calculate your deficit, hit your protein, train consistently, and protect your sleep. That's the entire system.</p>
     </div>
     <div class="cta-right">
-      <a href="#categories" class="btn-primary">Explore Travel <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="var(--bg)" stroke-width="1.5"><path d="M2 6h8M7 3l3 3-3 3"/></svg></a>
-      <a href="lifestyle.html" class="btn-secondary">Back to Lifestyle</a>
+      <a href="#roadmap" class="btn-primary">Start Building Better Habits <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="var(--bg)" stroke-width="1.5"><path d="M2 6h8M7 3l3 3-3 3"/></svg></a>
+      <a href="body.html" class="btn-secondary">Back to Body Hub</a>
     </div>
   </div>
 </div>
@@ -453,18 +583,6 @@ document.querySelectorAll('a,button,input').forEach(function(el){
 window.addEventListener('scroll',function(){document.getElementById('nav').classList.toggle('stuck',scrollY>30);},{passive:true});
 var io=new IntersectionObserver(function(entries){entries.forEach(function(e,i){if(e.isIntersecting){setTimeout(function(){e.target.classList.add('in');},i*60);io.unobserve(e.target);}});},{threshold:.08});
 document.querySelectorAll('.reveal').forEach(function(r){io.observe(r);});
-document.querySelectorAll('.banner-card').forEach(function(card){
-  card.addEventListener('mousemove',function(e){
-    var r=card.getBoundingClientRect();
-    var x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
-    card.style.transform='translateY(-8px) scale(1.014) rotateY('+x*5+'deg) rotateX('+(-y*4)+'deg)';
-    card.style.transition='transform .1s ease,box-shadow .65s';
-  });
-  card.addEventListener('mouseleave',function(){
-    card.style.transform='';
-    card.style.transition='transform .65s cubic-bezier(.22,1,.36,1),box-shadow .65s';
-  });
-});
 </script>
 </body>
 </html>
