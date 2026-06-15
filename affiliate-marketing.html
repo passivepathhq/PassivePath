@@ -223,11 +223,12 @@ footer{border-top:1px solid var(--line);padding:30px 44px}
   .p-card:nth-child(4){border-radius:0 0 16px 16px}
 }
 @media(max-width:780px){
-  .hero{min-height:100vh !important;display:flex !important;flex-direction:column !important;align-items:center !important;overflow:hidden !important;position:relative !important;grid-template-columns:1fr !important}
-  .hero-l{position:relative !important;z-index:2 !important;padding:60px 24px 24px !important;display:flex !important;flex-direction:column !important;justify-content:center !important;width:100% !important;margin-top:0 !important}
-  .hero-l[style]{padding:20px 24px 24px !important;margin-top:0 !important}
+  .hero{min-height:75vh !important;display:flex !important;align-items:center !important;overflow:hidden !important;position:relative !important;grid-template-columns:1fr !important}
+  .hero-l{padding:20px 20px 20px !important;position:relative !important;z-index:2 !important;display:flex !important;flex-direction:column !important;justify-content:center !important;width:100% !important;margin-top:0 !important}
+  .hero-l[style]{padding:20px 20px 20px !important;margin-top:0 !important}
+  .hero-l h1{font-size:clamp(36px,10vw,56px) !important;line-height:1.05 !important}
   .hero-r{position:absolute !important;inset:0 !important;width:100% !important;height:100% !important;z-index:0 !important}
-  .hero-r img{position:absolute !important;inset:0 !important;width:100% !important;height:100% !important;object-fit:cover !important;object-position:center 30% !important;filter:brightness(.22) saturate(.2) contrast(1.1) !important}
+  .hero-r img{position:absolute !important;inset:0 !important;width:100% !important;height:100% !important;object-fit:cover !important;object-position:center 30% !important;filter:brightness(.35) saturate(.2) contrast(1.1) !important}
   .hero-r-veil{position:absolute !important;inset:0 !important;z-index:1 !important;background:linear-gradient(0deg,rgba(8,8,8,.95) 0%,rgba(8,8,8,.6) 50%,rgba(8,8,8,.2) 100%) !important}
   nav{background:rgba(8,8,8,.4) !important;backdrop-filter:blur(12px) !important}
   #c-dot,#c-ring{display:none !important}
@@ -235,6 +236,9 @@ footer{border-top:1px solid var(--line);padding:30px 44px}
   .n-ham{display:none !important}
   .n-btn{display:none !important}
   .n-links{display:none !important}
+  .n-logo svg{display:none !important}
+  .n-logo::after{content:'';display:block;width:36px;height:36px;background:url('YOUR_LOGO_URL_HERE') center/contain no-repeat !important}
+  .wrap{padding:0 20px !important}
 }
 </style>
 </head>
